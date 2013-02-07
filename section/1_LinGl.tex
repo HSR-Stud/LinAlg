@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lineare Gleichungssysteme
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Lineare Gleichungssysteme}
+
+\subsection{mehere Gleichungssysteme simultan lösen}
+	Dieses Gleichungssystem hat die gleiche Koeffizientenmatrix, aber verschiedene rechte  Seiten.\\
+	Vorgehen:
+	\begin{itemize}
+		\item Für jede Gleichung eine Spalte auf der rechten Seite
+		\item Gauss durchführen
+			\begin{equation*}
+				\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} =  \begin{bmatrix} a_{11} & a_{12} \\ b_{11} & b_{12} \end{bmatrix}	
+			\end{equation*}
+		\item Lösung der Gleichung $\Rightarrow x= a_{11}z_1 + a_{12}z_2 \qquad y= b_{11}z_1 + b_{12}z_2$
+	\end{itemize}
+
+\subsection{lineare Abhängigkeit}
+	\begin{tabular}{ll}
+		Koeffizienten: & $A = \left(\begin{array}{cc} 1 & 4\\ 2 & 8 \end{array}\right) \left\rbrace\begin{array}{l} l_1 = x +4y \\ l_2 = 2x + 8y \end{array}\right.$\\ \\
+		Bestimmung $\lambda_i$:  &  $\lambda_1 l_1 = \lambda_1 (x + 4y) = \lambda_1 x + \lambda_1 4y$ \\
+		& $\lambda_2 l_2 = \lambda_2 (2x + 8y) = \lambda_2 2x + \lambda_2 8y$
+	\end{tabular} \\ \\
+	
+	\textbf{Def.:} Wenn $\lambda_1 l_1 + \lambda_2 l_2 = 0$, alle $\lambda_i = 0$ dann ist es linear \textbf{unabhängig}. \\ \\
+
+	$A^T = \left(\begin{array}{cc}
+		1 & 2 \\
+		4 & 8
+	\end{array}\right) =  0 \Rightarrow \begin{array}{|cc|c|}
+		\hline1 & 2 & 0\\
+		4 & 8 & 0\\
+		\hline
+	\end{array} \rightarrow^{Gauss} \rightarrow \begin{array}{|cc|c|}
+		\hline 1 & 2 & 0\\
+		0 & 0 & 0\\
+		\hline
+	\end{array} $ \qquad somit ist $\lambda_1 = -2\lambda_2 \rightarrow$ nicht alle $\lambda_i = 0 \Rightarrow$ lin. abhängig.\\ \\
+
+	Falls A lin. unabhängig\\
+	$ A^T = \left(\begin{array}{cc}
+		3 & 2\\
+		-6 & 4\\
+	\end{array}\right) = 0 \Rightarrow \begin{array}{|cc|c|}
+		\hline 3 & 2 & 0\\
+		-6 & 4 & 0 \\
+		\hline
+	\end{array} \rightarrow^{Gauss} \rightarrow \begin{array}{|cc|c|}
+		\hline 1 & 0 & 0\\
+		0 & 1 & 0\\
+		\hline
+	\end{array}$  \qquad somit ist $\lambda_1 = 0, \lambda_2 = 0 \Rightarrow$ lin. unabhängig.\\
+
+	Die Linieare Abhängigkeit kann geprüft werden, indem man bei einer Matrix den Gauss durchführt. Entsteht dabei eine \textbf{leer Zeile}
+	so ist es \textbf{linear abhängig}. \\
+	Sind \textbf{zwei gleiche} Zeilen- bzw. Spaltenvektoren in einer Matrix, so ist sie ebenfalls \textbf{linear abhängig}.
+
+
+\subsection{Bezeichnung von Matrizen und Vektoren}
+	\subsubsection{Vektoren}
+		\begin{tabular}{ll}
+			Zeilenvektor: & $v = \left(\begin{array}{cccc} a_1 & a_2 & \ldots & a_n \end{array}\right)$ \\
+			Spaltenvektor: & $v = \left(\begin{array}{c} b_1 \\ b_2 \\ \vdots \\ b_m \end{array}\right)$ \\
+			Nullvektor: & $v = \left(\begin{array}{cccc} 0 & 0 & \ldots & 0 \end{array}\right)$\\
+			Einheitsvektor: & $e_1 = \left(\begin{array}{cccc} 1 & 0 & \ldots & 0 \end{array}\right) \qquad 
+					e_2 = \left(\begin{array}{cccc} 0 & 1 & \ldots & 0 \end{array}\right)$
+		\end{tabular}
+	
+	\subsubsection{Matrizen}
+		\begin{tabular}{ll}
+			Einheitsmatrix: & $E = \left(\begin{array}{cccc}
+				1 & 0 & \ldots & 0 \\
+				0 & 1 &  & \vdots \\
+				\vdots &  & \ddots & 0\\
+				0 & \ldots & 0 & 1 \end{array}\right)$ \\
+			Inverse Matrix: & $A^{-1} \qquad \begin{array}{|c|c|} \hline A & E \\ \hline \end{array} \rightarrow^{Gauss} \rightarrow
+					\begin{array}{|c|c|} \hline E & A^{-1} \\ \hline \end{array} $ \\
+			Transponierte Matrix: & $A^T$ \qquad Zeilen und Spalten von A vertauschen	
+		\end{tabular}
+
+\subsection{Rang}
+	Maximale Anzahl linear unabhängiger Zeilen ( = linear unabhängiger Spalten)
+
+\subsection{Homogen, Inhomogen}
+	\begin{tabular}{ll}
+		$Ax = b$ inhomogen & $Ax = 0$ homogen $\rightarrow b=0$\\
+	\end{tabular}
+
+	regulär $\left\lbrace\begin{array}{l}
+		\text{homogen } \rightarrow \text{ Nulllösung } x=0\\
+		\text{inhomogen } \rightarrow \text{ genau \underline{eine} Lösung }\end{array}\right.$ \\
+	
+	singulär $\left\lbrace\begin{array}{l}
+		\text{homogen } Ax=0, b_1=0, b_2=0 \rightarrow \infty-\text{viele Lösungen}\\
+		\text{inhomogen } Ax = b \left\lbrace\begin{array}{l}
+			b_1 \neq 0, b_2 \neq 0 \rightarrow \text{ keine Lösung}\\
+			b_1 \neq 0, b_2 =0 \rightarrow \infty-\text{viele Lösungen} \end{array}\right. \end{array}\right.$ \qquad 
+		$ \begin{array}{|c : c|c|}
+			\hline E & * & b_1 \\
+			\hdashline 0 & 0 & b_2 \\
+			\hline \end{array}$ \\
+
+	Lösungsmenge eines inhomogenen Gleichungssystems mit $\infty$-vielen Lösungen\\
+	$\rightarrow^{Gauss} \begin{array}{|ccc|c|}
+		\hline 1 & 0 & -5 & 1 \\
+		0 & 1 & 3 & 2\\
+		0 & 0 & 0 & 0\\
+		\hline \end{array}$ \begin{tabular}{l}
+			$x = 1 + 5z$ \\
+			$y = 2 - 3z$ \\
+			$z = z$ \end{tabular} $\Rightarrow$ \begin{tabular}{l}
+				$\mathbb{L}=\lbrace\left(\begin{array}{c}
+					1+5z\\
+					2-3z\\
+					z \end{array}\right)\backslash z \in \mathbb{R} \rbrace$\\
+				$\mathbb{L}=\lbrace\underbrace{\left(\begin{array}{c} 1 \\ 2 \\ 0 \end{array}\right)}_{x_p}
+				+ \underbrace{z\left(\begin{array}{c} 5 \\ -3 \\ 1 \end{array}\right) \backslash z \in \mathbb{R}}_{\mathbb{L}_h} \rbrace$ \\
+				$\mathbb{L}=\lbrace x_p + x_h \backslash x_h \in \mathbb{L}_h\rbrace$
+			\end{tabular}\\
+
+	$\mathbb{L}_h$  ist eine Gerade, Ebene... durch den Nullpunkt.
+
+
+		

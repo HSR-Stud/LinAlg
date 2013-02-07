@@ -1,0 +1,28 @@
+%Dokumentinformationen
+\newcommand{\titleinfo}{Lineare Algebra - Formelsammlung}
+\newcommand{\authorinfo}{C.Gwerder, S.K\"orner}
+\newcommand{\versioninfo}{v1.0}
+
+% standard header
+\include{header} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Neue Befehle und Definitionen                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
+\newcommand{\verweis}[2]{\small{(siehe auch \ref{#1}, #2 (S. \pageref{#1}))}}
+
+\begin{document}
+\setlength{\parindent}{0pt} %Kein Einrücken  bei neuem Paragraph
+\input{section/1_LinGl}
+\input{section/2_Determinante}
+\input{section/3_Vektorgeometrie}
+\input{section/4_Vektorraeume}
+\newpage
+\input{section/5_Eigenwerte}
+
+\end{document}
