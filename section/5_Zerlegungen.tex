@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zerlegungen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Zerlegungen}
+
+\subsection{L-U-Zerlegung}
+	\begin{enumerate}
+		\item Gauss (Vorwärtsreduktion)
+		\item L $\rightarrow$ Pivospalten (rot und blau), U $\rightarrow$ "Rest" (grün) 
+	\end{enumerate}\ 
+	$\begin{array}{|cccc|}
+		\hline 
+		\color{red}* & * & * & *\\
+		\color{blue}* & * & * & *\\
+		\color{blue}* & * & * & *\\
+		\color{blue}* & * & * & *\\
+		\hline
+	\end{array}$
+	$\rightarrow$
+	$\begin{array}{|cccc|}
+		\hline 
+		1 & * & * & *\\
+		0 & \color{red}* & * & *\\
+		0 & \color{blue}* & * & *\\
+		0 & \color{blue}* & * & *\\
+		\hline
+	\end{array}$
+	$\rightarrow^{...}\rightarrow$
+	$\begin{array}{|cccc|}
+		\hline 
+		1 & * & * & *\\
+		0 & 1 & * & *\\
+		0 & 0 & 1 & *\\
+		0 & 0 & 0 & \color{red}*\\
+		\hline
+	\end{array}$
+	$\rightarrow$
+	$\begin{array}{|cccc|}
+		\hline 
+		\color{green}1 & \color{green}* & \color{green}* & \color{green}*\\
+		0 & \color{green}1 & \color{green}* & \color{green}*\\
+		0 & 0 & \color{green}1 & \color{green}*\\
+		0 & 0 & 0 & \color{green}1\\
+		\hline
+	\end{array}$\ \ \ \
+	$L=	\left(\begin{array}{cccc}
+			\color{red}* & 0 & 0 & 0\\
+		 	\color{blue}* & \color{red}* & 0 & 0\\
+			\color{blue}* & \color{blue}* & \color{red}* & 0\\
+			\color{blue}* & \color{blue}* & \color{blue}* & \color{red}*\\
+	\end{array}\right)$\ \ \ \ \ \ 
+	$U=	\left(\begin{array}{cccc}
+			\color{green}* & \color{green}* & \color{green}* & \color{green}*\\
+		 	0 & \color{green}* & \color{green}* & \color{green}*\\
+			0 & 0 & \color{green}* & \color{green}*\\
+			0 & 0 & 0 & \color{green}*\\
+	\end{array}\right)$\\\\\\\\
+	Beispiel:\ \ \ \  
+	$A=	\left(\begin{array}{ccc}
+		-1 &\ \ 0 &\ \ 2\\
+		 \ \ 1 &\ \ 3 &\ \ 3\\
+		-1 &-3 &\ \ 1\\
+	\end{array}\right)$\\\\\\ 
+	$\begin{array}{|ccc|}
+			\hline 
+			\color{red}-1 & \ \ 0 & \ \ 2\\
+			\color{blue}\ \ 1 & \ \ 3 & \ \ 3\\
+			\color{blue}-1 & -3 & \ \ 1\\
+			\hline
+	\end{array}$
+	$\rightarrow$
+	$\begin{array}{|ccc|}
+			\hline 
+			\ \ 1 & \ \ 0 & -2\\
+			\ \ 0 & \color{red}\ \ 3 & \ \ 5\\
+			\ \ 0 & \color{blue}-3 & -1\\
+			\hline
+	\end{array}$
+	$\rightarrow$
+	$\begin{array}{|ccc|}
+			\hline 
+			\ \ 1 & \ \ 0 & -2\\
+			\ \ 0 & \ \ 1 & \ \ \frac 5 3\\
+			\ \ 0 & \ \ 0 & \color{red}\ \ 4\\
+			\hline
+	\end{array}$
+	$\rightarrow$
+	$\begin{array}{|ccc|}
+			\hline 
+			\color{green}\ \ 1 & \color{green}\ \ 0 & \color{green}-2\\
+			\ \ 0 & \color{green}\ \ 1 & \color{green}\ \ \frac 5 3\\
+			\ \ 0 & \ \ 0 & \color{green}\ \ 1\\
+			\hline
+	\end{array}$\ \ \ \ \	
+	$L=	\left(\begin{array}{ccc}
+			\color{red}-1 &\ \ 0 &\ \ 0\\
+		 	\color{blue}\ \ 1 &\color{red}\ \ 3 &\ \ 0\\
+			\color{blue}-1 &\color{blue} -3 &\color{red}\ \ 4\\
+	\end{array}\right)$\ \ \ \ \ \ 
+	$U=	\left(\begin{array}{ccc}
+			\color{green}\ \ 1 &\color{green}\ \ 0 &\color{green}-2\\
+		 	\ \ 0 &\color{green}\ \ 1 &\color{green}\ \ \frac 5 3\\
+			\ \ 0 &\ \ 0 &\color{green}\ \ 1\\
+	\end{array}\right)$\\	
+\subsection{Q-R-Zerlegung}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
