@@ -5,6 +5,8 @@
 \section{Zerlegungen}
 
 \subsection{L-U-Zerlegung}
+	A = LU\\
+	(A gegeben)
 	\begin{enumerate}
 		\item Gauss (Vorwärtsreduktion)
 		\item L $\rightarrow$ Pivospalten (rot und blau), U $\rightarrow$ "Rest" (grün) 
@@ -102,17 +104,69 @@
 			\color{green}\ \ 1 &\color{green}\ \ 0 &\color{green}-2\\
 		 	\ \ 0 &\color{green}\ \ 1 &\color{green}\ \ \frac 5 3\\
 			\ \ 0 &\ \ 0 &\color{green}\ \ 1\\
-	\end{array}\right)$\\	
+	\end{array}\right)$\\
+		
 \subsection{Q-R-Zerlegung}
+	A = QR\\
+	(A gegeben)
+	\begin{enumerate}
+		\item Q $\rightarrow$ A orthonormalisieren 
+		\item R $\rightarrow$ $Q^t$A 
+	\end{enumerate} 
+	Beispiel:\ \ \ \  
+	$A=	\left(\begin{array}{ccc}
+		\ \ 1 &\ \ 0 &\ \ 0\\
+		\ \ 1 &\ \ 1 &\ \ 0\\
+		\ \ 1 &\ \ 1 &\ \ 1\\
+	\end{array}\right)$
+	$\rightarrow^{orthonorm.}\rightarrow$
+	$\left(\begin{array}{ccc}
+		\ \ \frac 1 {\sqrt 3}  & -\frac 2 {\sqrt 6} &\ \ 0\\
+		\ \ \frac 1 {\sqrt 3} &\ \ \frac 1 {\sqrt 6} & -\frac 1 {\sqrt 2}\\
+		\ \ \frac 1 {\sqrt 3} &\ \ \frac 1 {\sqrt 6} &\ \ \frac 1 {\sqrt 2}\\
+	\end{array}\right)$ = Q\\\\\\
+	R = $Q^t$A = 
+	$\left(\begin{array}{ccc}
+			\ \ \frac 1 {\sqrt 3}  &\ \ \frac 1 {\sqrt 3} &\ \frac 1 {\sqrt 3}\\
+			 -\frac 2 {\sqrt 6} &\ \ \frac 1 {\sqrt 6} &\ \frac 1 {\sqrt 6}\\
+			\ \ 0 & -\frac 1 {\sqrt 2} &\ \ \frac 1 {\sqrt 2}\\
+		\end{array}\right)$ * 
+	$\left(\begin{array}{ccc}
+		\ \ 1 &\ \ 0 &\ \ 0\\
+		\ \ 1 &\ \ 1 &\ \ 0\\
+		\ \ 1 &\ \ 1 &\ \ 1\\
+	\end{array}\right)$ =
+	$\left(\begin{array}{ccc}
+		\ \ \frac 3 {\sqrt 3} &\ \ \frac 2 {\sqrt 3} &\ \ \frac 1 {\sqrt 3}\\
+		\ \ 0 &\ \ \frac 2 {\sqrt 6} &\ \ \frac 1 {\sqrt 6}\\
+		\ \ 0 &\ \ 0 &\ \ \frac 1 {\sqrt 2}\\
+	\end{array}\right)$
 
-
-
-
-
-
-
-
-
+\subsection{Cholesky-Zerlegung}
+	A = $LL^t$\\
+	(A gegeben)\\\\ 
+	$A=	\left(\begin{array}{ccc}
+		\ \ l_{11} &\ \ l_{21} &\ \ l_{31}\\
+		\ \ l_{12} &\ \ l_{22} &\ \ l_{32}\\
+		\ \ l_{13} &\ \ l_{23} &\ \ l_{33}\\	
+	\end{array}\right)$ 
+	= $LL^t$ = 
+	$\left(\begin{array}{ccc}
+		\ \ x_1 &\ \ 0 &\ \ 0\\
+		\ \ x_2 &\ \ x_4 &\ \ 0\\
+		\ \ x_3 &\ \ x_5 &\ \ x_6\\	
+	\end{array}\right)$ *
+	$\left(\begin{array}{ccc}
+		\ \ x_1 &\ \ x_2 &\ \ x_3\\
+		\ \ 0 &\ \ x_4 &\ \ x_5\\
+		\ \ 0 &\ \ 0 &\ \ x_6\\	
+	\end{array}\right)$\\\\\\ 
+	(1): $x_1*x_1 + 0*0 + 0*0 = x_1^2 = l_{11}$ $\rightarrow$ $x_1$ berechnen\\ 		
+	(2): $x_2*x_1 + x_4*0 + 0*0 = x_2*x_1 = l_{12}$ $\rightarrow$ $x_2$ berechnen\\ 
+	(3): $x_3*x_1 + x_5*0 + x_6*0 = x_3*x_1 = l_{13}$ $\rightarrow$ $x_3$ berechnen\\
+	(4): $x_2*x_2 + x_4*x_4 + 0*0 = x_2^2 + x_4^2 = l_{22}$ $\rightarrow$ $x_4$ berechnen\\
+	(5): $x_3*x_2 + x_5*x_4 + x_6*0 = x_3*x_2 + x_5*x_4 = l_{23}$ $\rightarrow$ $x_5$ berechnen\\	
+	(6): $x_3*x_3 + x_5*x_5 + x_6*x_6 = x_3^2 + x_5^2 + x_6^2 = l_{33}$ $\rightarrow$ $x_6$ berechnen\\	
 
 
 
