@@ -6,7 +6,7 @@
 \subsection{Definition einer Determinante}
 	\begin{enumerate}
 		\item $det(A)$ ändert sich nicht unter der Operation $E$
-		\item Wird eine Zeile von $A$ mit $\lambda$ multipliziert, wird auch $det(A)$ mit $\lambda$ multipliziert.
+		\item Wird eine Zeile von $A$ mit $\lambda$ multipliziert, wird auch $det(A)$ mit $\lambda$ multipliziert: $det(\lambda A)=\lambda^{Anzahl Zeilen/Spalten}det(A)$
 		\item $det(E) = 1$
 	\end{enumerate}
 
@@ -45,7 +45,7 @@
 		h & i \end{array}\right| 
 	- {\color{green}b} \left|\begin{array}{cc}
 		d & f \\
-		g & h \end{array}\right|
+		g & i \end{array}\right|
 	+ {\color{blue}c} \left|\begin{array}{cc}
 		d & e \\
 		g & h \end{array}\right|$ \\
@@ -70,19 +70,37 @@
 		a_{11} & b_1 & a_{13} & \ldots & a_{1n}\\
 		\vdots & \vdots & \vdots & \ddots & \vdots \\
 		a_{n1} & b_n & a_{n3} & \ldots & a_{nn} \end{array}\right|}{det(A)}$ \\ \\
-Inverse Matrix mit Cramer $A^{-1} = C : c_{ik} = \frac{(-1)^{k+i} \cdot det(A_{ki})}{det(A)} \longrightarrow$ 1. Index = Zeile; 2.Index = Spalte
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	Inverse Matrix mit Cramer (Minoren): $A^{-1} = C : c_{ik} = \frac{(-1)^{k+i} \cdot det(A_{ki})}{det(A)} \longrightarrow$ 1. Index = Zeile; 2.Index = Spalte
+	
+	Beispiel: \ \ 
+		$A=\left(\begin{array}{rrr} 
+				-1 & -3 & 0 \\
+				2 & 3 & -2 \\
+				2 & 1 & -3 \\
+			\end{array}\right)$ \\ \ \\
+			
+		$A^{-1}=\underbrace{\frac{1}{1}}_{det(A)}
+			\left(\begin{array}{rrr} 
+				+\underbrace{\left|\begin{array}{rr} 3 & -2 \\ 1 & -3 \\ \end{array}\right|}_{det(A_{11})} &
+				-\underbrace{\left|\begin{array}{rr} -3 & 0 \\ 1 & -3 \\ \end{array}\right|}_{det(A_{21})} &
+				+\underbrace{\left|\begin{array}{rr} -3 & 0 \\ 3 & -2 \\ \end{array}\right|}_{det(A_{31})} \\
+			
+				-\underbrace{\left|\begin{array}{rr} 2 & -2 \\ 2 & -3 \\ \end{array}\right|}_{det(A_{12})} &
+				+\underbrace{\left|\begin{array}{rr} -1 & 0 \\ 2 & -3 \\ \end{array}\right|}_{det(A_{22})} &
+				-\underbrace{\left|\begin{array}{rr} -1 & 0 \\ 2 & -2 \\ \end{array}\right|}_{det(A_{32})} \\
+			
+				+\underbrace{\left|\begin{array}{rr} 2 & 3 \\ 2 & 1 \\ \end{array}\right|}_{det(A_{13})} &
+				-\underbrace{\left|\begin{array}{rr} -1 & -3 \\ 2 & 1 \\ \end{array}\right|}_{det(A_{23})} &
+				+\underbrace{\left|\begin{array}{rr} -1 & -3 \\ 2 & 3 \\ \end{array}\right|}_{det(A_{33})} \\
+			\end{array}\right)
+			=\left(\begin{array}{rrr} 
+				-7 & -9 & 6 \\
+				2 & 3 & -2 \\
+				-4 & -5 & 3 \\
+			\end{array}\right)$
+			
+\subsection{Spezielle Fälle}
+	$det\left(\begin{array}{cc} 
+			A & 0 \\
+			0 & B \\
+		\end{array}\right)=det(A)det(B)$ \ \ wobei $det(A)$ und $det(B)$ Matrizen von Grösse $n*n$ sind.
