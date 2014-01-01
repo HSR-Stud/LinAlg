@@ -63,13 +63,16 @@
 \subsection{Kreis und Kugel}
 	Parametergleichung: \begin{tabular}{ll}
 		& $\vec{m} =$ Mittelpunkt \\
-		$K(M,r) = \lbrace (\vec{p} - \vec{m}) \cdot (\vec{p} - \vec{m}) = r^2 \rbrace$ & $\vec{p} =$ Punkt am äusseren Rand\\
+		$K(M,r) = \lbrace (\vec{p} - \vec{m}) \bullet (\vec{p} - \vec{m}) = r^2 \rbrace$ & $\vec{p} =$ Punkt am äusseren Rand\\
 		& $r =$ Radius
 	\end{tabular}\\
 
 	\begin{equation*}
 		(\vec{p} - \vec{m})^2 = r^2  \qquad \Leftrightarrow \qquad (p_1 - m_1)^2 + (p_2 - m_2)^2 + (p_3 - m_3)^2 = r^2
 	\end{equation*}
+	
+	Gerade durch den Mittelpunkt: $n_{x0}x+n_{y0}y+e=0$  \\
+	Um e zu bestimmen, muss der Mittelpunkt des Kreises in $x$ und $y$ eingesetzt werden. Die Normale wird aus der Geraden gebildet.
 
 	\subsubsection{Tangentialebene}
 		\begin{tabular}{lll}
@@ -195,7 +198,10 @@
 			$\infty$ Lösungen (2 Parameter frei wählbar) &$\Rightarrow$  
 			& - & - &E und F sind identisch
 		\end{tabular}
-
+		
+	\subsubsection{Lage von Geraden}
+		Es wird das Vektorprodukt von zwei Geraden gebildet (g und h sind Geraden). \\
+		Wenn $\vec{g}\times\vec{h}=0$ dann sind die Geraden parallel, ansonsten sind sie windschief.
 
 \subsection{Orthonormalisierung}
 	$\vec{a_1}, \vec{a_2}, \vec{a_3}$ sind linear unabhängig $\longrightarrow \vec{b_1} \bot \vec{b_2} \bot \vec{b_3}$\\
@@ -290,40 +296,16 @@
 		$|\vec{a}; \vec{b}; \vec{c}| > 0 \Leftrightarrow \vec{a}; \vec{b}; \vec{c}$ bilden Rechtssystem \qquad
 		$|\vec{a}; \vec{b}; \vec{c}| < 0 \Leftrightarrow \vec{a}; \vec{b}; \vec{c}$ bilden Linkssystem
 
+	\subsubsection{Flächeninhalt eines Dreiecks}
+		$A=\frac{1}{2}|\vec{AB}\times\vec{AC}|$ \ \ wobei $\vec{AB}$ und $\vec{AC}$ Richtungsvektoren sind.
+	
 	\subsubsection{Anwendung}
-		Abstand Punkt/Ebene, Gerade/Gerade:
+		Abstand Punkt/Ebene, Gerade/Gerade (windschief):
 		\begin{equation*}
-			d = (\vec{p_1} - \vec{p_2}) \cdot \vec{n_0} = (\vec{p_1} - \vec{p_2}) \cdot \frac{\vec{r_1} \times \vec{r_2}}{|\vec{r_1} \times \vec{r_2}|}
+			d = (\vec{p_1} - \vec{p_2}) \bullet \vec{n_0} = (\vec{p_1} - \vec{p_2}) \bullet \frac{\vec{r_1} \times \vec{r_2}}{|\vec{r_1} \times \vec{r_2}|}
 		\end{equation*} 
 
-		Abstand Punkt/Gerade:
+		Abstand Punkt/Gerade oder Gerade/Gerade (parallel):
 		\begin{equation*}
-			d = \frac{\vec{r} \times (\vec{p} - \vec{p_0})}{|\vec{r}|}
+			d = \frac{|\vec{r} \times (\vec{p} - \vec{p_0})|}{|\vec{r}|}
 		\end{equation*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
