@@ -2,4 +2,6 @@ LinAlg.pdf
 *.aux
 *.log
 *.out
-*synctex.gz
+*.synctex.gz
+*.synctex
+
